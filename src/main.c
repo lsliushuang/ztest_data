@@ -18,9 +18,10 @@ int main(int argc, char**argv)
 {
 	int *p = NULL;
 	int array[10] = {1,2,3,4,5,6,7,8,9,10};
+	int aa[3][2] = {{1,2},{3,4},{5,6}};
 
 	p = find_value(array,&array[9],3);
 	printf("test = %d \r\n",*p);
-
+	test_ptr();
 	return 0;
 }

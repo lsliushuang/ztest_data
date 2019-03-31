@@ -23,5 +23,6 @@ int main(int argc, char**argv)
 	p = find_value(array,&array[9],3);
 	printf("test = %d \r\n",*p);
 	test_ptr();
+	judge_host_little_big();
 	return 0;
 }

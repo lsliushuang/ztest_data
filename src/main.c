@@ -21,8 +21,8 @@ int main(int argc, char**argv)
 	int aa[3][2] = {{1,2},{3,4},{5,6}};
 
 	p = find_value(array,&array[9],3);
-	printf("test = %d \r\n",*p);
+	printf("test \r\n",__FUNCTION__);
 	test_ptr();
-	judge_host_little_big();
+
 	return 0;
 }

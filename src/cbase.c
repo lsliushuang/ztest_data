@@ -20,6 +20,9 @@ union test
 	char bb;
 
 };
+
+
+
 /**
  * function: find_value
  * descrption: find a value from a list
@@ -38,6 +41,8 @@ int *find_value(int *begin , int*end, int value)
  	return begin;
 }
 
+
+
 /**
  * function: test_ptr
  * descrption: 测试指针数组
@@ -45,7 +50,6 @@ int *find_value(int *begin , int*end, int value)
  * input:
  * return:
  * */
-
 void test_ptr(void)
 {
 	char *aa[3] = {"1str1","2str2","3str3"};  //定义一个指针数组
@@ -64,29 +68,36 @@ void test_ptr(void)
 	 printf("%x, %x\n", iNum1, iNum2);
 
 	 printf("tets = %x \r\n",test_u.bb);
+
+	 /***测试隐式转换**********/
+	 unsigned char a = 0;
+	 unsigned char b = 0xFF;
+
+	 if (a == ~b)
+	 {
+		printf("a == ~b");
+
+	 }
+	 else
+	 {
+		printf("a != ~b");
+		printf("~b = %x \r\n",~b);
+     }
+
+	 /****测试二级指针**********/
+	 int num = 32;
+	 int *ptr = &num;
+	 int **pptr = &ptr;
+	 printf("ptr = %d \r\n",**pptr);
+
+	 char str1[5] = "welco";
+	 char *str2 = "hello";
+	 strncpy(str1,str2,5);
+	 printf(" %s \r\n",str1);
 }
 
 
 
-void judge_host_little_big(void)
-{
-	union{
-		short s;
-		char c[sizeof(short)];
-	}un;
-
-	un.s = 0x0102;
-
-	if(un.c[0] == 0x01 && (un.c[1] == 0x02))
-	{
-		printf("host is big endian\r\n");
-	}
-	else if(un.c[0] == 0x02 && (un.c[1] == 0x01))
-	{
-		printf("host is little endian\r\n");
-	}
-
-}
 
 
 
